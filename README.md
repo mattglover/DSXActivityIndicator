@@ -41,6 +41,7 @@ Change tintColor DSXActivityIndicator
 ## Known Limitations / TODO
 * Currently restricted to 40pt x 40pt asset
 * Unable to provide own asset
+* Reverse animation
 * Delegate to listen for user interactions
 
 ## About
