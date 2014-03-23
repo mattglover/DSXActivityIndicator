@@ -9,36 +9,40 @@
 #import "DSXRootViewController.h"
 #import "DSXActivityIndicator.h"
 
-@interface DSXRootViewController ()
-@property (nonatomic, weak) IBOutlet DSXActivityIndicator *customSpinner;
-@end
-
 @implementation DSXRootViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Set any custom properties on customSpinner
-    //    [self.customSpinner setRotationDuration:3.0];
-    //    [self.customSpinner setFadeInOut:NO];
-}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self.customSpinner startAnimating];
+    int index = 0;
     
-    UITapGestureRecognizer *stopSpinnerTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                            action:@selector(spinnerTapped:)];
-    [self.customSpinner addGestureRecognizer:stopSpinnerTapGesture];
+    for (UIView *subview in self.view.subviews) {
+        if ([subview isKindOfClass:[DSXActivityIndicator class]]) {
+            
+            DSXActivityIndicator *spinner = (DSXActivityIndicator *)subview;
+            
+            // Set any custom properties on customSpinner
+            //    [spinner setRotationDuration:3.0];
+            //    [spinner setFadeInOut:NO];
+            
+            [spinner startAnimating];
+            
+            UITapGestureRecognizer *stopSpinnerTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(spinnerTapped:)];
+            [spinner addGestureRecognizer:stopSpinnerTapGesture];
+            
+            ++index;
+        }
+    }
 }
 
 - (void)spinnerTapped:(UITapGestureRecognizer *)gesture {
     
-    if ([self.customSpinner isAnimating]) {
-        [self.customSpinner stopAnimating];
+    DSXActivityIndicator *spinner = (DSXActivityIndicator *)gesture.view;
+    
+    if ([spinner isAnimating]) {
+        [spinner stopAnimating];
     } else {
-        [self.customSpinner startAnimating];
+        [spinner startAnimating];
     }
 }
 
