@@ -16,7 +16,7 @@ As with UIActivityIndicatorView the color of the indicator can be controlled by 
 
 To add an instance of DSXActivityIndicator as a subView :
 ```objc
-DSXActivityIndicator *spinner = [DSXActivityIndicator alloc] init];
+DSXActivityIndicator *spinner = [[DSXActivityIndicator alloc] init];
 [self.view addSubview:spinner];
 ```
 
