@@ -39,6 +39,7 @@ Change tintColor DSXActivityIndicator
 ```
 
 ## Known Limitations / TODO
+* Rename to DSXActivityIndicatorView
 * Currently restricted to 40pt x 40pt asset
 * Unable to provide own asset
 * Reverse animation
