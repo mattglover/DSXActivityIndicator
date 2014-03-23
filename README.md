@@ -20,6 +20,7 @@ DSXActivityIndicator *spinner = [DSXActivityIndicator alloc] init];
 [self.view addSubview:spinner];
 ```
 
+### Properties
 Customize the behaviour of the DSXActivityIndicator
 ```objc
 [spinner setRotationDuration:5.0]; // defaults to 1.0
@@ -28,17 +29,27 @@ Customize the behaviour of the DSXActivityIndicator
 [spinner setFadeInOut:NO]; // defaults to YES
 ```
 
+### Methods
+Start / Stop DSXActivityIndicator animating
+```objc
+[spinner startAnimating];
+```
+```objc
+[spinner stopAnimating];
+```
+
 Check current animating state of DSXActivityIndicator
 ```objc
 BOOL isAnimating = [spinner isAnimating];
 ```
 
-Change tintColor DSXActivityIndicator
+Change tintColor DSXActivityIndicator (UIView)
 ```objc
 [spinner setTintColor:[UIColor yellowColor]];
 ```
 
 ## Known Limitations / TODO
+* Provide convenience initialiser i.e. `+ (instanceType)indicator`
 * Rename to DSXActivityIndicatorView
 * Currently restricted to 40pt x 40pt asset
 * Unable to provide own asset
