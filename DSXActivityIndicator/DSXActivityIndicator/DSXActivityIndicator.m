@@ -44,6 +44,7 @@ static NSTimeInterval const defaultRotationDuration = 1.0;
 }
 
 - (void)startAnimating {
+    [self.indicatorImageView.layer removeAllAnimations];
     [[self.indicatorImageView layer] addAnimation:[self spinAnimation] forKey:@"spinAnimation"];
     _animating = YES;
     
@@ -59,7 +60,6 @@ static NSTimeInterval const defaultRotationDuration = 1.0;
                          [self.indicatorImageView setAlpha:0.0f];
                      }
                      completion:^(BOOL finished) {
-                         [self.indicatorImageView.layer removeAllAnimations];
                          _animating = NO;
                      }];
 }
