@@ -57,7 +57,7 @@ Change tintColor DSXActivityIndicator (UIView)
 * Delegate to listen for user interactions
 
 ## About
-This simple exercise was a means to practice Cocoapods techniques whilst also sharing _something_ that others might find useful.  
+This simple exercise was a means to practice CocoaPods techniques whilst also sharing _something_ that others might find useful.  
   
 Please feel free to use for any purpose.  
 I would love to hear from you, especially if you use DSXActivityIndicator in any of your projects.  
